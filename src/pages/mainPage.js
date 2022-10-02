@@ -1,6 +1,6 @@
 import {React} from "react";
 import './mainPage.css'
-import personalImg from "../assets/personal.jpeg"
+import personalImg from "../assets/personal.jpg"
 
 const MainPage = () => {
 
