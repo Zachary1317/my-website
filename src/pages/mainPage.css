@@ -1,0 +1,466 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* common styles */
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type:none;
+    outline: none;
+    font-family: 'Jura';
+    font-size: 40%;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-bg{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: url(../assets/background2.jpg)center no-repeat;
+    opacity: .5;
+    background-size: cover;
+}
+
+/* mouse circle */
+.mouse-circle,.mouse-dot{
+    border-radius: 50%;
+    position: fixed;
+    /* bring it to higher level */
+    z-index:10;
+    /* move the circle to the circle of mouse */
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    /* not work */
+    pointer-events: none;
+}
+
+.mouse-circle{
+    width: 6rem;
+    height: 6rem;
+    border:0.1rem solid rgb(69, 68, 68);
+    animation: mouseCircleAnim 10s infinite linear;
+}
+
+@keyframes mouseCircleAnim {
+    0%{
+        width: 6rem;
+        height: 6rem;
+    }
+    25%{
+        width: 8rem;
+        height: 8rem;
+    }
+    35%{
+        width: 4rem;
+        height: 4rem;
+    }
+    70%{
+        width: 8rem;
+        height: 8rem;
+    }
+    100%{
+        width: 6rem;
+        height: 6rem;
+    }
+}
+
+.mouse-dot{
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: #2d3142;
+    animation: mouseDotAnim 10s infinite linear;
+}
+
+@keyframes mouseDotAnim {
+    0%{
+        width: .5rem;
+        height: .5rem;
+    }
+    55%{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    110%{
+        width: .5rem;
+        height: .5rem;
+    }
+    
+}
+/* end of mouse circle */
+
+/* nav */
+.navbar{
+    position: fixed;
+    top:2.5rem;
+    width: 100%;
+    display: flex;
+    transition: opacity 0.5S visibility 0.5S;
+    justify-content: flex-end;
+    z-index: 100;
+}
+
+.navbar-link{
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2d3142;
+    text-transform: uppercase;
+    margin: 0 2.5rem;
+    z-index: 100;
+}
+
+.hidden-nav{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.menu-icon{
+    position: fixed;
+    top: 0;
+    right: 6rem;
+    width: 12rem;
+    height: 7rem;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5S;
+    z-index: 100;
+}
+
+.show-menu{
+    opacity: 1;
+    visibility:visible;
+}
+
+.menu-icon-line{
+    width: 5rem;
+    height: 0.2rem;
+    background-color: #2d3142;
+    margin: 0.5rem 0;
+    box-shadow: 0 0.3rem 0.5rem #000;
+}
+/* end of nav */
+
+/* Section1 */
+.section-1{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+/* logo */
+.logo{
+    position: absolute;
+    top: 2rem;
+    left: 5rem;
+    font-size: 3rem;
+    font-weight: 600;
+    text-decoration: uppercase;
+    color: #2d3142;
+}
+/* end of logo */
+
+/* circle */
+.main-circle{
+    width:55rem;
+    height: 55rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    transition: width 0.2s,height 0.2s;
+    opacity: .9;
+}
+
+/* .main-circle:hover{
+    width: 75rem;
+    height: 75rem;
+} */
+
+.main-circle img{
+    width: 180%;
+    /* mix the image with the background */
+    /* mix-blend-mode: color-dodge; */
+    position: relative;
+    transform: translate(-25%,-30%);
+    transition: left 2s,top 2s;
+    top: 0;
+    left: 0;
+}
+
+/* self intro */
+.self_intro{
+    width: 55rem;
+    margin: 0 20rem;
+    font-family: "Poppins",sans-serif;
+    font-size: 12rem;
+    color: #2d3142;
+}
+/* end of self intro */
+
+/* featured text */
+.featured-text-container{
+    position:fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.featured-text{
+    font-size: 3rem;
+    color: #2d3142;
+    text-transform: uppercase;
+    align-self: center;
+    /* these two line make it become a line */
+    width: 0;
+    word-wrap: break-word;
+    position: sticky;
+    line-height: 2.2;
+}
+
+.featured-text-1{
+    margin: 0 auto 0 10rem; 
+}
+
+.featured-text-2{
+    margin: 0 10rem 0 auto; 
+}
+/* end of featured text */
+
+/* section2 */
+.section-2{
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    position: relative;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+/* section heading */
+.section-heading-2{
+    position: relative;
+    font-size: 10rem;
+    font-weight: 500;
+    color: #2d3142;
+    border-bottom: 2px #000 solid;
+    margin-bottom: 3rem;
+    width: max-content;
+}
+/* end of section-2 heading */
+
+.about-me-text{
+    position:relative;
+    font-family: "Poppins",sans-serif;
+    font-size: 5rem;
+    font-weight: 300;
+    color: #2d3142;
+    line-height: 1.5;
+}
+
+.about-me-text span{
+    margin-top: 3rem;
+    display: block;
+    position:relative;
+    font-family: "Poppins",sans-serif;
+    font-size: 5rem;
+    font-weight: 600;
+    color: #2d3142;
+    line-height: 1.5;
+}
+/* end of section2 */
+
+/* section3 */
+.section-3{
+    margin:10rem auto 0 auto;
+    width: 70%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-heading-3{
+    position: relative;
+    font-size: 10rem;
+    font-weight: 500;
+    color: #2d3142;
+    border-bottom: 2px #000 solid;
+    margin-bottom: 3rem;
+    width: max-content;
+}
+
+/* service */
+.service-wrapper{
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service{
+    width: 100%;
+    margin:2rem 0;
+    border-bottom: 0.2rem solid #2d3142;
+
+}
+
+.service-btn{
+    width: 100%;
+    position: relative;
+    display: block;
+    height: 10rem;
+}
+
+.service-btn span{
+    font-size: 7rem;
+    font-weight: 500;
+    color: #2d3142;
+    margin-bottom: 2rem;
+}
+
+.service-content{
+    font-size: 5rem;
+    color: #777;
+    letter-spacing: 0.1rem;
+    height: 0rem;
+    visibility: hidden;
+    opacity: 0;
+    margin-bottom: 3rem;
+}
+
+.project-container{
+    padding-top: 4rem;
+}
+
+.service-content .title{
+    color: #2d3142;
+    font-weight: 700;
+    display: inline;
+    font-size: 5rem;
+
+}
+
+.service-content .position{
+    color: #2d3142;
+    font-size: 5rem;
+    font-style: italic;
+    display: inline;
+
+}
+
+.service-content .time{
+    margin-top: 1rem;
+    font-size: 3rem;
+    
+}
+
+.service-content .body{
+    color: #2d3142;
+    font-size: 4rem;
+    margin-top: 3rem;
+}
+
+.service-content a{
+    color: #274c77;
+    font-size: 4rem;
+    margin-top: 3rem;
+    text-decoration: underline;
+}
+
+.project-container .body p{
+    color: red;
+    font-size: 4rem;
+    margin-top: 3rem;
+}
+
+.service-content span{
+    color: #2d3142;
+    font-size: 4rem;
+    margin-top: 2rem;
+    
+}
+
+.change.service-content{
+    height:max-content;
+    visibility:visible;
+    opacity: 1;
+    transition: height .5s,opacity;
+}
+
+.upArrow{
+    display: inline-block;
+    visibility: hidden;
+    width: 0rem;
+}
+
+.downArrow{
+    display: inline-block;
+    transform: scale(1);
+    visibility: visible;
+}
+
+.changeDownArrow.downArrow{
+    transform: scale(0);
+    visibility: hidden;
+}
+
+.changeUpArrow.upArrow{
+    transform: scale(1);
+    visibility: visible;
+}
+/* end of service */
+/* end of section3 */
+
+/* Section4 */
+.section-4{
+    position: relative;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.section-4 h1{
+    margin-left: 0;
+}
+
+.section-heading-4{
+    position: relative;
+    font-size: 8rem;
+    font-weight: 500;
+    color: #2d3142;
+    margin-bottom: 3rem;
+    width: max-content;
+}
+
+.contact-board{
+    width: 100rem;
+    height: 30%;
+    background-color: rgba(229, 229, 229, 0.4);
+    backdrop-filter: blur(3px);
+    border-radius: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-info-container{
+    width: max-content;
+}
+
+.contact-board .info{
+    font-size: 4rem;
+    margin-top: 3rem;
+}
+
+.contact-board .info a{
+    color: #3f55b7;
+    text-decoration: underline;
+    font-size: 4rem;
+}
