@@ -189,8 +189,8 @@ var animateCircles = (e,x,y) =>{
                         <p className="title">Personal Website | </p>
                         <p className="position">Front-end developer</p>
                         <p className="time">August  2022 - Present</p>
-                        <p className="body">The website you are currently visiting is built by myself from scratch with  HTML, CSS and JavaScript. I have been updating it continuously with new knowledge that I have learned. Now I am trying to reconstruct it with React.</p>
-                        <a href="https://github.com/Zachary1317/Personal-website">→Github</a>
+                        <p className="body">This website is a project that I use to practice my front-end programming skills. It is built by myself all from scratch. I have been updating it continuously with new knowledge that I have learned. This site is developed JavaScript and React and deployed on AWS.</p>
+                        <a href="https://github.com/Zachary1317/my-website">→Github</a>
                         </div>
                         <div className="project-container">
                         <p className="title">Hozez | </p>
