@@ -1,7 +1,6 @@
-import {React, useRef} from "react";
+import {React} from "react";
 import './mainPage.css'
 import personalImg from "../assets/personal.jpeg"
-
 
 const MainPage = () => {
 
@@ -30,12 +29,16 @@ document.body.addEventListener("mouseleave",()=>{
 // end of mouse circle
 
 // menu
-const navbar = document.querySelector(".navbar")
-const menu = document.querySelector(".menu-icon")
-
 document.addEventListener("scroll",()=>{
+    const navbar = document.querySelector(".navbar")
+    const menu = document.getElementById("menu-icon")
     navbar.classList.add("hidden-nav");
     menu.classList.add("show-menu");
+    menu.addEventListener("click",()=>{
+        navbar.classList.remove("hidden-nav");
+        menu.classList.remove("show-menu");
+    })
+
 
     if(window.scrollY === 0){
         navbar.classList.remove("hidden-nav");
@@ -43,10 +46,7 @@ document.addEventListener("scroll",()=>{
     }
 })
 
-menu.addEventListener("click",()=>{
-    navbar.classList.remove("hidden-nav");
-    menu.classList.remove("show-menu");
-})
+
 // end of menu
 
 
@@ -55,7 +55,7 @@ menu.addEventListener("click",()=>{
 let mX = 0;
 let mY = 0;
 
-const animateCircles = (e,x,y) =>{
+var animateCircles = (e,x,y) =>{
     const mainImg = document.querySelector('.main-circle img');
     if(x<mX){
         mainImg.style.left = `100px`;
@@ -114,15 +114,15 @@ const animateCircles = (e,x,y) =>{
             <div className="page-bg"></div>
 
             {/* Nav */}
-            <div class="menu-icon center">
-                <div class="menu-icon-line"></div>
-                <div class="menu-icon-line"></div>
-                <div class="menu-icon-line"></div>
+            <div className="menu-icon center" id="menu-icon">
+                <div className="menu-icon-line"></div>
+                <div className="menu-icon-line"></div>
+                <div className="menu-icon-line"></div>
             </div>
             {/* end of Nav */}
 
             {/* Navbar */}
-            <div class="navbar">
+            <div className="navbar">
                 <a href="#section-1" class="navbar-link">Home</a>
                 <a href="#section-2" class="navbar-link">About Me</a>
                 <a href="#section-3" class="navbar-link">Experience</a>
